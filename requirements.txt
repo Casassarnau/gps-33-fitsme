@@ -6,7 +6,7 @@ coverage==5.3
 coverage-badge==1.0.1
 iniconfig==1.0.1
 isort==5.5.4
-lazy-object-proxy==1.5.1
+lazy-object-proxy==1.4.*
 mccabe==0.6.1
 packaging==20.4
 pluggy==0.13.1
