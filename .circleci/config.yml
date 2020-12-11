@@ -22,9 +22,18 @@ jobs:
          name: Pylint
       - run:
           command: |
-                  source ./env/bin/activate
-                  python3 test.py
+                source ./env/bin/activate
+                python3 test.py
           name: Test
+      - run:
+          name: Run Tests
+          command: |
+                source ./env/bin/activate
+                $HOME/.local/bin/coverage run -m pytest
+                $HOME/.local/bin/coverage report
+                $HOME/.local/bin/coverage html  # open htmlcov/index.html in a browser
+      - store_artifacts:
+          path: htmlcov
 
 workflows:
   main:
